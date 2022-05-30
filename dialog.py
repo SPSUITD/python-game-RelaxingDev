@@ -9,17 +9,12 @@ class Dialog(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
         self.rect.center = (980, 900)
-        self.image.set_alpha(220) ## Прозрачность
+        self.image.set_alpha(200) ## Прозрачность
         if photo:
             self.photo = pygame.image.load(photo).convert_alpha()## Боковое изображение
         else:
             self.photo = None
         self.dFont = pygame.font.Font(Gil, 25) ## Шрифт
-        self.message = (
-            "This is a sample of using dialog box.",
-            "The message that shown in the dialog box ",
-            "has to be a tuple or list.",
-            )
         self.screen = screen
     def next(self):
         outOfText = False
@@ -29,7 +24,7 @@ class Dialog(pygame.sprite.Sprite):
         nextPage = False
         text_pos = 0
         text = ""
-        delayTimer = 30
+        delayTimer = 40
         textSurf = None
         textImage = pygame.Surface(self.image.get_size())
         textImage.fill((0,0,0))
@@ -48,7 +43,7 @@ class Dialog(pygame.sprite.Sprite):
                             textImage = pygame.Surface(self.image.get_size())
                             textImage.fill((0,0,0))
                             textImage.set_colorkey((0,0,0))
-                            delayTimer = 30
+                            delayTimer = 40
                             continue
                         self.show = False
             if not outOfText and not nextPage:
