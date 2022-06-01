@@ -48,7 +48,7 @@ class Fon:
         screen.blit(self.bitmap, (self.x, self.y, 1000, 800))
 ## Персонажи
 gg1 = Sprite(50,240, "gg.png")
-vv1 = Sprite(500, 280, "vv.png")
+vv1 = Sprite(300, 150, "vv.png" )
 ## Фоны
 bg1 = Fon(0,0, "bg1.png")
 bg2 = Fon(0,0, "bg2.png")
@@ -150,8 +150,8 @@ def glav1():
     unNoDialog.show = True
     unNoDialog.next()
     bg2.back()
-    menus = [Menu("Как же больно, одни мерцания перед глазами...давай же...", (30, 620)),
-             Menu("Не хочу вставать, не хочу, хочу только спать дальше", (30, 680))]
+    menus = [Menu("Как же больно, одни мерцания перед глазами...давай же... ", (30, 620)),
+             Menu("Не хочу вставать, не хочу, хочу только спать дальше ", (30, 680))]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -164,11 +164,11 @@ def glav1():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for menu in menus:
-                    if menu.hovered and menu.text == "Как же больно, одни мерцания перед глазами...давай же...":
+                    if menu.hovered and menu.text == "Как же больно, одни мерцания перед глазами...давай же... ":
                         print("Концовка-1")
                         click.play()
                         prod1()
-                    elif menu.hovered and menu.text == "Не хочу вставать, не хочу, хочу только спать дальше":
+                    elif menu.hovered and menu.text == "Не хочу вставать, не хочу, хочу только спать дальше ":
                         print("Продолжение...")
                         click.play()
                         end1()
@@ -179,11 +179,11 @@ def end1():
     unNoDialog = Dialog(screen)
     unNoDialog.message = ("Вы засыпаете и умираете от холода ",)
     unNoDialog.show = True
-    unNoDialog.sndNext()
+    unNoDialog.next()
     screen.fill((0, 0, 0))
     while True:
-        printText("Вы умерли", "gilroy-bold.ttf", 50, 400, 300, red)
-        printText("Ваш главный герой погиб, нажмите Spacebar чтобы продолжить ", "gilroy-medium.ttf", 35, 100, 360, white)
+        printText("Вы проиграли, начните игру заново", "gilroy-bold.ttf", 40, 230, 300, red)
+        printText("Нажмите -SPACEBAR- для того чтобы выйти в меню ", "gilroy-medium.ttf", 35, 159, 360, red)
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
@@ -236,11 +236,11 @@ def prod2():
     bg1.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Бортовой ИИ:  Ваши координаты, 59 382 9394 47372 0032",)
+    unNoDialog.message = ("Бортовой ИИ:  Ваши координаты, 59 382 9394 47372 0032 ",)
     unNoDialog.show = True
     unNoDialog.next()
-    menus = [Menu("Стой, стой, стой, а можно буквами?", (30, 640)),
-             Menu("И что мне делать?", (30, 700)),]
+    menus = [Menu("Стой, стой, стой, а можно буквами? ", (30, 640)),
+             Menu("И что мне делать? ", (30, 700)),]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -253,11 +253,11 @@ def prod2():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for menu in menus:
-                    if menu.hovered and menu.text == "Стой, стой, стой, а можно буквами?":
+                    if menu.hovered and menu.text == "Стой, стой, стой, а можно буквами? ":
                         print("Продолжение4")
                         click.play()
                         prod4()
-                    elif menu.hovered and menu.text == "И что мне делать?":
+                    elif menu.hovered and menu.text == "И что мне делать? ":
                         print("Продолжение5")
                         click.play()
                         prod5()
@@ -266,12 +266,12 @@ def prod3():
     bg1.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Проводится диагностика...20%...60%...100%...Диагностика закончена.,",
-                          "о вас известно только то, что вы как минимум из расы -человек-")
+    unNoDialog.message = ("Проводится диагностика...20%...60%...100%...Диагностика закончена ",
+                          "о вас известно только то, что вы как минимум из расы -человек- ")
     unNoDialog.show = True
     unNoDialog.next()
-    menus = [Menu("А я думал я вареный арбуз, ладно, скажи мне где я", (30, 640)),
-             Menu("А что я тут делаю?", (30, 700)),]
+    menus = [Menu("А я думал я вареный арбуз, ладно, скажи мне где я ", (30, 640)),
+             Menu("А что я тут делаю? ", (30, 700)),]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -284,11 +284,11 @@ def prod3():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for menu in menus:
-                    if menu.hovered and menu.text == "А я думал я вареный арбуз, ладно, скажи мне где я":
+                    if menu.hovered and menu.text == "А я думал я вареный арбуз, ладно, скажи мне где я ":
                         print("Продолжение4")
                         click.play()
                         prod4()
-                    elif menu.hovered and menu.text == "А что я тут делаю?":
+                    elif menu.hovered and menu.text == "А что я тут делаю? ":
                         print("Продолжение5")
                         click.play()
                         prod5()
@@ -303,7 +303,6 @@ def prod4():
     unNoDialog.next()
     unNoDialog.message = ("Бортовой ИИ: Я думаю вам срочно нужно поднять уровень тепла в каюте.",)
     unNoDialog.show = True
-    unNoDialog.next()
     menus = [Menu("К-как, я же должен быть на луне... Скажи мне, как попасть обратно? ", (10, 640)),
             Menu("Впервые вижу такой корабль, ИИ, включи отопление за меня ", (10, 700)), ]
     while True:
@@ -335,7 +334,7 @@ def prod5():
                           "лично привел Герд-Маршал Руклер, вы сели и назвали точку полета ",)
     unNoDialog.show = True
     unNoDialog.next()
-    unNoDialog.message = ("Облачная зона добывающих станций.",)
+    unNoDialog.message = ("Облачная зона добывающих станций ")
     unNoDialog.show = True
     unNoDialog.message = ("К сожалению для того чтобы вернуться назад, нужно 8 ",
                           "флашек кристалического топлива. Спешу дать вам совет, ",
@@ -377,7 +376,7 @@ def prod6():
     unNoDialog.show = True
     unNoDialog.next()
     menus = [Menu("Расскажи мне про модель коробля ", (50, 640)),
-            Menu("Полетели за топливом.", (50, 700)), ]
+            Menu("Расскажи что я тут делаю ", (50, 700)), ]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -394,7 +393,7 @@ def prod6():
                         print("Продолжение2")
                         click.play()
                         prod8()
-                    elif menu.hovered and menu.text == "Полетели за топливом.":
+                    elif menu.hovered and menu.text == "Расскажи что я тут делаю ":
                         print("Продолжение5")
                         click.play()
                         prod5()
@@ -403,22 +402,33 @@ def prod8():
     bg1.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Это выпускной модуль коробля -NE6-  ",
-                          "Данный корабль обладает двумя лазерными пушками и тремя ускорителями для маневров ",)
+    unNoDialog.message = ("Это выпускной модуль коробля -NE6- ",
+                          "Данный корабль обладает двумя отсеками еды ",
+                          "на год и тремя ускорителями для маневров ",)
     unNoDialog.show = True
     unNoDialog.next()
-    unNoDialog.message = ("*Нажмите два раза на Spacebar* ",)
-    unNoDialog.show = True
-    unNoDialog.next()
+    menus = [Menu("Не густо, зато от голода не умру, но как мне попасть домой ", (50, 640)),
+            Menu("... ", (50, 700)), ]
     while True:
+        pygame.event.pump()
+        for menu in menus:
+            if menu.rect.collidepoint(pygame.mouse.get_pos()):
+                menu.hovered = True
+            else:
+                menu.hovered = False
+            menu.draw()
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
-                click.play()
-                prod7()
-            elif event.type == pygame.KEYDOWN:
-                click.play()
-                prod7()
+                for menu in menus:
+                    if menu.hovered and menu.text == "Не густо, зато от голода не умру, но как мне попасть домой ":
+                        print("Продолжение2")
+                        click.play()
+                        prod5()
+                    elif menu.hovered and menu.text == "... ":
+                        print("Продолжение5")
+                        click.play()
+                        prod5()
 
 def prod7():
     glav22.back()
@@ -513,11 +523,11 @@ def prod10():
     bg1.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Бортовой ИИ: Нет, я всю свою короткую жизнь",
-                          "существовал в солнечной системе и видел",
-                          "только луну, но у меня есть синхронизация",
-                          "с справочником по данной системе",
-                          "вам зачитать 15675 страниц?")
+    unNoDialog.message = ("Бортовой ИИ: Нет, я всю свою короткую жизнь ",
+                          "существовал в солнечной системе и видел ",
+                          "только луну, но у меня есть синхронизация ",
+                          "с справочником по данной системе ",
+                          "вам зачитать 15675 страниц? ")
 
     unNoDialog.show = True
     unNoDialog.next()
@@ -548,10 +558,10 @@ def prod11():
     bg1.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("К сожалению спасательный модуль не владеет",
-                          "Никаким вооружением, даже переносным",
-                          "Но я могу вам предложиь взять с собой перец",
-                          "О, неожиданность, мы подлетаем")
+    unNoDialog.message = ("К сожалению спасательный модуль не владеет ",
+                          "Никаким вооружением, даже переносным ",
+                          "Но я могу вам предложиь взять с собой перец ",
+                          "О, неожиданность, мы подлетаем ")
 
     unNoDialog.show = True
     unNoDialog.next()
@@ -589,7 +599,7 @@ def prod12():
     unNoDialog.show = True
     unNoDialog.next()
     menus = [Menu("Что за указания? ", (50, 640)),
-             Menu("Сразу говори что мне делать ", (50, 700)), ]
+             Menu("Сразу говори, что мне делать ", (50, 700)), ]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -625,7 +635,7 @@ def prod13():
     unNoDialog.show = True
     unNoDialog.next()
     menus = [Menu("Я все понял, импровизируем ", (50, 640)),
-             Menu("Расскжи побольше о жителях ", (50, 700)), ]
+             Menu("Расскажи побольше о жителях ", (50, 700)), ]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -656,38 +666,26 @@ def prod14():
 
     unNoDialog.show = True
     unNoDialog.next()
-    menus = [Menu("Я все понял, импровизируем ", (50, 640)),
-             Menu("Расскжи побольше о жителях ", (50, 700)), ]
+    unNoDialog.message = ("Нажмите два раза на spacebar ")
     while True:
-        pygame.event.pump()
-        for menu in menus:
-            if menu.rect.collidepoint(pygame.mouse.get_pos()):
-                menu.hovered = True
-            else:
-                menu.hovered = False
-            menu.draw()
         pygame.display.flip()
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
-                for menu in menus:
-                    if menu.hovered and menu.text == "Я все понял, импровизируем ":
-                        print("Продолжение9")
-                        click.play()
-                        prod16()
-                    elif menu.hovered and menu.text == "Расскжи побольше о жителях " :
-                        print("Продолжение10")
-                        click.play()
-                        prod15()
+                click.play()
+                prod16()
+            elif event.type == pygame.KEYDOWN:
+                click.play()
+                prod16()
 
 def prod15():
     bg6.back()
     gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Средний возраст жителей 42+- ",
-                          "Основное хобби: азартные игры",
-                          "Родная земля: Марс",
-                          "Музыкальные вкусы: Шансон, Рок",
-                          "Пристыковка через 5...4...3...2...1...")
+    unNoDialog.message = ("Средний возраст жителей: 42+- ",
+                          "Основное хобби: азартные игры ",
+                          "Родная земля: Марс ",
+                          "Музыкальные вкусы: Шансон, Рок ",
+                          "Пристыковка через 5...4...3...2...1... ")
 
     unNoDialog.show = True
     unNoDialog.next()
@@ -720,7 +718,7 @@ def prod16():
     unNoDialog = Dialog(screen)
     unNoDialog.message = ("Неизвестный голос: Назовите номер корабля! ",
                           "Назовите свое имя, вы у нас не записаны как ",
-                          "прибывающий",)
+                          "прибывающий ",)
 
     unNoDialog.show = True
     unNoDialog.next()
@@ -749,11 +747,11 @@ def prod16():
 
 def prod17():
     bg7.back()
+    gg1.pers()
     unNoDialog = Dialog(screen)
     unNoDialog.message = ("Неизвестный голос: И что? Мы тут причем? ",
-                          "Улетайте отсюда, нас и так тут много",
-                          "ИИ: Скажите им, что вы торговец",)
-
+                          "Улетайте отсюда, нас и так тут много ",
+                          "ИИ: скажите им, что вы торговец ")
     unNoDialog.show = True
     unNoDialog.next()
     menus = [Menu("Я...я торговец, мне нужно спасти свои товары, их очень много ", (50, 640)),
@@ -770,26 +768,29 @@ def prod17():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for menu in menus:
-                    if menu.hovered and menu.text == "Здравствйте, у нас экстренная ситуация ":
+                    if menu.hovered and menu.text == "Я...я торговец, мне нужно спасти свои товары, их очень много ":
                         print("Продолжение1")
                         click.play()
-                        prod17()
-                    elif menu.hovered and menu.text == "Я должен быть в списке, меня отпрвили починить что-то " :
+                        prod18()
+                    elif menu.hovered and menu.text == "А если я вам заплачу? ":
                         print("Продолжение10")
                         click.play()
-                        prod18()
+                        prod20()
 
-def prod17():
+def prod18():
     bg7.back()
+    gg1.pers()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Неизвестный голос: И что? Мы тут причем? ",
-                          "Улетайте отсюда, нас и так тут много",
-                          "ИИ: Скажите им, что вы торговец",)
+    unNoDialog.message = ("Неизвестный голос: У нас и на борту достаточно ",
+                          "персонала обслуживания так что проваливайте ")
 
     unNoDialog.show = True
     unNoDialog.next()
-    menus = [Menu("Я...я торговец, мне нужно спасти свои товары, их очень много ", (50, 640)),
-             Menu("А если я вам заплачу? ", (50, 700)), ]
+    unNoDialog.message = ("ИИ: Осталось 3 минуты, тяните время ",)
+    unNoDialog.show = True
+    unNoDialog.next()
+    menus = [Menu("Хорошо, только дайте время отсоединиться от вас ", (50, 640)),
+             Menu("Я отказываюсь... ", (50, 700)), ]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -802,50 +803,167 @@ def prod17():
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 for menu in menus:
-                    if menu.hovered and menu.text == "Здравствйте, у нас экстренная ситуация ":
-                        print("Продолжение1")
-                        click.play()
-                        prod17()
-                    elif menu.hovered and menu.text == "Я должен быть в списке, меня отпрвили починить что-то " :
-                        print("Продолжение10")
-                        click.play()
-                        prod18()
-
-def prod17():
-    bg7.back()
-    unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Неизвестный голос: И что? Мы тут причем? ",
-                          "Улетайте отсюда, нас и так тут много",
-                          "ИИ: Скажите им, что вы торговец",)
-
-    unNoDialog.show = True
-    unNoDialog.next()
-    menus = [Menu("Я...я торговец, мне нужно спасти свои товары, их очень много ", (50, 640)),
-             Menu("А если я вам заплачу? ", (50, 700)), ]
-    while True:
-        pygame.event.pump()
-        for menu in menus:
-            if menu.rect.collidepoint(pygame.mouse.get_pos()):
-                menu.hovered = True
-            else:
-                menu.hovered = False
-            menu.draw()
-        pygame.display.flip()
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                for menu in menus:
-                    if menu.hovered and menu.text == "Здравствйте, у нас экстренная ситуация ":
+                    if menu.hovered and menu.text == "Хорошо, только дайте время отсоединиться от вас ":
                         print("Продолжение1")
                         click.play()
                         prod19()
-                    elif menu.hovered and menu.text == "Я должен быть в списке, меня отпрвили починить что-то " :
+                    elif menu.hovered and menu.text == "Я отказываюсь... ":
                         print("Продолжение10")
                         click.play()
-                        prod18()
+                        prod20()
 
+def prod19():
+    bg7.back()
+    gg1.pers()
+    unNoDialog = Dialog(screen)
+    unNoDialog.message = ("Неизвестный голос: Даю 30 секунд ",
+                          "Иначе... ",
+                          "Голос старика: ОНИ ОТКАЧИВАЮТ ТОПЛИВО!!! ")
 
+    unNoDialog.show = True
+    unNoDialog.next()
+    unNoDialog.message = ("Неизвестный голос: Доставайте пушки мужики ",
+                          "сейчас мы их оттуда выкурим ",
+                          "и посмотрим кто там сидит ")
+    unNoDialog.show = True
+    unNoDialog.next()
+    menus = [Menu("ИИ, дело очень плохо они с пушками сюда сейчас завалятся ", (50, 640)),
+             Menu("А как вы этими пукалками пробьете обшивку? ", (50, 700)), ]
+    while True:
+        pygame.event.pump()
+        for menu in menus:
+            if menu.rect.collidepoint(pygame.mouse.get_pos()):
+                menu.hovered = True
+            else:
+                menu.hovered = False
+            menu.draw()
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for menu in menus:
+                    if menu.hovered and menu.text == "ИИ, дело очень плохо они с пушками сюда сейчас завалятся ":
+                        print("Продолжение1")
+                        click.play()
+                        prod21()
+                    elif menu.hovered and menu.text == "А как вы этими пукалками пробьете обшивку? " :
+                        print("Продолжение10")
+                        click.play()
+                        prod21()
 
+def prod20():
+    bg7.back()
+    gg1.pers()
+    unNoDialog = Dialog(screen)
+    unNoDialog.message = ("Неизвестный голос: А зачем мне твои ",
+                          "деньги, лучше плати проход коробкой пива ",
+                          "Иначе... ",
+                          "Голос старика: ОНИ ОТКАЧИВАЮТ ТОПЛИВО!!! ")
 
+    unNoDialog.show = True
+    unNoDialog.next()
+    unNoDialog.message = ("Неизвестный голос: Доставайте пушки мужики ",
+                          "сейчас мы их оттуда выкурим ",
+                          "и посмотрим кто там сидит ")
+    unNoDialog.show = True
+    unNoDialog.next()
+    menus = [Menu("ИИ, дело очень плохо они с пушками сюда сейчас завалятся ", (50, 640)),
+             Menu("Могу только вам мочу предложить ребята ", (50, 700)), ]
+    while True:
+        pygame.event.pump()
+        for menu in menus:
+            if menu.rect.collidepoint(pygame.mouse.get_pos()):
+                menu.hovered = True
+            else:
+                menu.hovered = False
+            menu.draw()
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for menu in menus:
+                    if menu.hovered and menu.text == "ИИ, дело очень плохо они с пушками сюда сейчас завалятся ":
+                        print("Продолжение1")
+                        click.play()
+                        prod21()
+                    elif menu.hovered and menu.text == "Могу только вам мочу предложить ребята " :
+                        print("Продолжение10")
+                        click.play()
+                        prod21()
+
+def prod21():
+    bg1.back()
+    gg1.pers()
+    unNoDialog = Dialog(screen)
+    unNoDialog.message = ("Неизвестный голос: Вскрывайте эту консервную банку ",)
+
+    unNoDialog.show = True
+    unNoDialog.next()
+    unNoDialog.message = ("ИИ: заправка закончена, можем улетать ",
+                          "Вы отдаете приказ об отлете? ")
+    unNoDialog.show = True
+    unNoDialog.next()
+    menus = [Menu("Конечно! Быстрее прошу тебя ", (50, 640)),
+             Menu("Не, тут посидим ", (50, 700)), ]
+    while True:
+        pygame.event.pump()
+        for menu in menus:
+            if menu.rect.collidepoint(pygame.mouse.get_pos()):
+                menu.hovered = True
+            else:
+                menu.hovered = False
+            menu.draw()
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                for menu in menus:
+                    if menu.hovered and menu.text == "Конечно! Быстрее прошу тебя ":
+                        print("Продолжение1")
+                        click.play()
+                        end3()
+                    elif menu.hovered and menu.text == "Не, тут посидим " :
+                        print("Продолжение10")
+                        click.play()
+                        end2()
+
+def end2():
+    bg7.back()
+    vv1.pers()
+    gg1.pers()
+    unNoDialog = Dialog(screen)
+    unNoDialog.message = ("Вам вскрывают модуль и захватывают в плен ",)
+    unNoDialog.show = True
+    unNoDialog.next()
+    screen.fill((0, 0, 0))
+    while True:
+        printText("Вы проиграли, начните игру заново ", "gilroy-bold.ttf", 40, 230, 300, red)
+        printText("Нажмите -SPACEBAR- для того чтобы выйти в меню ", "gilroy-medium.ttf", 35, 159, 360, red)
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                click.play()
+                mmenu()
+            elif event.type == pygame.KEYDOWN:
+                click.play()
+                mmenu()
+
+def end3():
+    bg2.back()
+    unNoDialog = Dialog(screen)
+    unNoDialog.message = ("Вы и ваш помошник смогли заправиться и успешно улететь",
+                          "обратно на вашну родную планету с полным баком ")
+    unNoDialog.show = True
+    unNoDialog.next()
+    screen.fill((0, 0, 0))
+    while True:
+        printText("Спасибо за прохождение истории о путсшествии космонавта!", "gilroy-bold.ttf", 40, 55, 300, green)
+        printText("Нажмите -SPACEBAR- для того чтобы выйти в меню ", "gilroy-medium.ttf", 35, 159, 360, white)
+        pygame.display.flip()
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                click.play()
+                mmenu()
+            elif event.type == pygame.KEYDOWN:
+                click.play()
+                mmenu()
 
 def main():
     pygame.mixer.music.play(-1)
