@@ -14,7 +14,7 @@ yellow = (255, 255, 0)
 white = (255, 255, 255)
 ## Экран
 screen = pygame.display.set_mode((1000, 800))
-pygame.display.set_caption('Sky Hatch')
+pygame.display.set_caption('Sky Door')
 ## Фоны
 mm = pygame.image.load(os.path.join("image\dg", "play1.png"))
 mm = pygame.transform.scale(mm,(1000,800))
@@ -652,7 +652,7 @@ def prod13():
                         print("Продолжение9")
                         click.play()
                         prod14()
-                    elif menu.hovered and menu.text == "Расскжи побольше о жителях " :
+                    elif menu.hovered and menu.text == "Расскажи побольше о жителях " :
                         print("Продолжение10")
                         click.play()
                         prod15()
@@ -683,7 +683,7 @@ def prod15():
     unNoDialog = Dialog(screen)
     unNoDialog.message = ("Средний возраст жителей: 42+- ",
                           "Основное хобби: азартные игры ",
-                          "Родная земля: Марс ",
+                          "Родная планета: Марс ",
                           "Музыкальные вкусы: Шансон, Рок ",
                           "Пристыковка через 5...4...3...2...1... ")
 
@@ -723,7 +723,7 @@ def prod16():
     unNoDialog.show = True
     unNoDialog.next()
     menus = [Menu("Здравствйте, у нас экстренная ситуация ", (50, 640)),
-             Menu("Я должен быть в списке, меня отпрвили починить что-то ", (50, 700)), ]
+             Menu("Я должен быть в списке, меня отправили починить что-то ", (50, 700)), ]
     while True:
         pygame.event.pump()
         for menu in menus:
@@ -740,7 +740,7 @@ def prod16():
                         print("Продолжение1")
                         click.play()
                         prod17()
-                    elif menu.hovered and menu.text == "Я должен быть в списке, меня отпрвили починить что-то " :
+                    elif menu.hovered and menu.text == "Я должен быть в списке, меня отправили починить что-то " :
                         print("Продолжение10")
                         click.play()
                         prod18()
@@ -810,7 +810,7 @@ def prod18():
                     elif menu.hovered and menu.text == "Я отказываюсь... ":
                         print("Продолжение10")
                         click.play()
-                        prod20()
+                        prod19()
 
 def prod19():
     bg7.back()
@@ -948,13 +948,13 @@ def end2():
 def end3():
     bg2.back()
     unNoDialog = Dialog(screen)
-    unNoDialog.message = ("Вы и ваш помошник смогли заправиться и успешно улететь",
-                          "обратно на вашну родную планету с полным баком ")
+    unNoDialog.message = ("Вы и ваш помошник смогли заправиться и успешно улететь ",
+                          "обратно на вашу родную планету с полным баком ")
     unNoDialog.show = True
     unNoDialog.next()
     screen.fill((0, 0, 0))
     while True:
-        printText("Спасибо за прохождение истории о путсшествии космонавта!", "gilroy-bold.ttf", 40, 55, 300, green)
+        printText("Спасибо за прохождение истории о путешествии космонавта!", "gilroy-bold.ttf", 40, 55, 300, green)
         printText("Нажмите -SPACEBAR- для того чтобы выйти в меню ", "gilroy-medium.ttf", 35, 159, 360, white)
         pygame.display.flip()
         for event in pygame.event.get():
